@@ -493,9 +493,9 @@ body{
 @media (min-width: 550px) {
 	.row.m-top-l {
 		display: grid;
-		grid-template-columns: 26% 74%;
+		grid-template-columns: 36% 64%;
 		grid-template-areas:
-			"header ."
+			"header header"
 			"sidebar main";
 	}
 	.row.m-top-l > .res-name {
