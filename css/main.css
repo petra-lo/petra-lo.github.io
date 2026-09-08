@@ -469,11 +469,15 @@ body{
 	color: #919191;
 }
 
-.name > .jobmarket {
+.jobmarket {
   display: block;
   margin-top: 0.2em;
   font-weight: 700;
   color: #000; /* force black */
+}
+
+.cv-link {
+  margin-top: 0.6em;
 }
 
 .home {
