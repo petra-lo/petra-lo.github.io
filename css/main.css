@@ -74,11 +74,17 @@
 		display: none;
 	}
 
-	/* Mobile header spacing */
+	/* Mobile header spacing: reserve real space above the name */
+	.container {
+		padding-top: 7.5rem;
+	}
+
 	.cv-topright {
-		position: static;
+		position: absolute;
+		top: 1.5rem;
+		right: 0;
+		margin: 0;
 		text-align: right;
-		margin: 2rem 0 2.5rem;
 	}
 
 	.row.m-top-l {
@@ -87,7 +93,7 @@
 
 	/* Space between portrait and introductory text */
 	.row.m-top-l > .col-3.center {
-		margin-bottom: 3rem !important;
+		margin-bottom: 4rem !important;
 	}
 }
 
