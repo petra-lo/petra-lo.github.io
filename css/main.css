@@ -73,6 +73,22 @@
 	.name {
 		display: none;
 	}
+
+	/* Mobile header spacing */
+	.cv-topright {
+		position: static;
+		text-align: right;
+		margin: 2rem 0 2.5rem;
+	}
+
+	.row.m-top-l {
+		margin-top: 0;
+	}
+
+	/* Space between portrait and introductory text */
+	.row.m-top-l > .col-3.center {
+		margin-bottom: 3rem !important;
+	}
 }
 
 /* For devices larger than 400px */
@@ -879,5 +895,3 @@ ul.dash li::marker { content: "—  "; }
 #other-list {
   display: none;
 }
-
-
