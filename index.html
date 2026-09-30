@@ -60,17 +60,67 @@
 	<link rel="stylesheet" href="css/main.css?v=4" />
 
 	<style>
+		/* Keep the photo column width unchanged, but make the photo itself smaller. */
+		.profile-photo {
+			margin-top: 0;
+		}
+
 		.profile-photo .img {
-			transform: scale(0.90);
+			transform: scale(0.80);
 			transform-origin: top center;
+		}
+
+		.col-9 > p:first-child {
+			margin-top: 0;
+		}
+
+		/* Compact expandable abstracts. */
+		.paper-details {
+			margin-top: 0.3rem;
+			margin-bottom: 0.35rem;
+		}
+
+		.paper-details summary {
+			display: inline-block;
+			cursor: pointer;
+			font-size: 0.92em;
+			line-height: 1.2;
+			color: inherit;
+			text-decoration: underline;
+			text-underline-offset: 2px;
+			list-style: none;
+		}
+
+		.paper-details summary::-webkit-details-marker {
+			display: none;
+		}
+
+		.paper-details summary::after {
+			content: " +";
+			text-decoration: none;
+		}
+
+		.paper-details[open] summary::after {
+			content: " −";
+		}
+
+		.paper-abstract {
+			margin-top: 0.55rem;
+			margin-bottom: 0.15rem;
+			padding-left: 0.9rem;
+			border-left: 1px solid #d8d8d8;
+			font-size: 0.94em;
+			line-height: 1.45;
+		}
+
+		.paper-abstract p {
+			margin: 0;
 		}
 	</style>
 </head>
-
 <body>
 <div class="container">
 	<p class="cv-topright"><a href="cv.pdf" target="_blank">Curriculum Vitae</a></p>
-
 	<div class="row m-top-l">
 		<div class="res-name m-bottom-m">
 			<div class="name">
@@ -81,9 +131,7 @@
 		</div>
 
 		<div class="col-3 center">
-			<div class="image profile-photo">
-				<div class="img"></div>
-			</div>
+			<div class="image profile-photo"><div class="img"></div></div>
 		</div>
 
 		<div class="col-9">
@@ -105,23 +153,39 @@
 			<ul class="dash">
 				<li>
 					<a href="papers/where-campaigns-matter.pdf" target="_blank">Where Campaigns Matter: Evidence from Labour&rsquo;s 2024 General Election Campaign</a> <strong>(Job Market Paper)</strong>
+					<details class="paper-details">
+						<summary>Abstract</summary>
+						<div class="paper-abstract" data-abstract-file="abstracts/where-campaigns-matter.txt">
+							<p>Loading abstract...</p>
+						</div>
+					</details>
 				</li>
+
 				<li>
 					<a href="papers/within-bloc-competition.pdf" target="_blank">The Electoral Costs of Within-Bloc Competition: A Nationwide Canvassing Experiment</a> with Velibor Ma&#269;ki&#263;.
+					<details class="paper-details">
+						<summary>Abstract</summary>
+						<div class="paper-abstract" data-abstract-file="abstracts/within-bloc-competition.txt">
+							<p>Loading abstract...</p>
+						</div>
+					</details>
 				</li>
+
 				<li>
-					<a href="papers/cable-news-bias.pdf" target="_blank">Selective Omission of Stories and Sources of Bias in Cable News</a>
+					<span>Selective Omission of Stories and Sources of Bias in Cable News</span>
+					<details class="paper-details">
+						<summary>Abstract</summary>
+						<div class="paper-abstract" data-abstract-file="abstracts/cable-news-bias.txt">
+							<p>Loading abstract...</p>
+						</div>
+					</details>
 				</li>
 			</ul>
 
 			<h2>Teaching</h2>
 			<ul class="dash">
-				<li>
-					ECON 191: Research Methods in Economics, UC Berkeley (Teaching Assistant)
-				</li>
-				<li>
-					<em>Understanding Voting, Political Behaviour and Public Opinion: An Introduction to Political Analytics</em>, with Miriam Sorace &mdash; forthcoming, SAGE, 2027
-				</li>
+				<li>ECON 191: Research Methods in Economics, UC Berkeley (Teaching Assistant)</li>
+				<li><em>Understanding Voting, Political Behaviour and Public Opinion: An Introduction to Political Analytics</em>, with Miriam Sorace &mdash; forthcoming, SAGE, 2027</li>
 			</ul>
 
 			<h2>Professional Experience</h2>
@@ -134,5 +198,23 @@
 		</div>
 	</div>
 </div>
+
+<script>
+document.querySelectorAll("[data-abstract-file]").forEach(function (container) {
+	fetch(container.dataset.abstractFile)
+		.then(function (response) {
+			if (!response.ok) throw new Error("Could not load abstract");
+			return response.text();
+		})
+		.then(function (text) {
+			var p = document.createElement("p");
+			p.textContent = text.trim();
+			container.replaceChildren(p);
+		})
+		.catch(function () {
+			container.innerHTML = "<p>Abstract unavailable.</p>";
+		});
+});
+</script>
 </body>
 </html>
