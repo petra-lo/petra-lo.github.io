@@ -901,3 +901,31 @@ ul.dash li::marker { content: "—  "; }
 #other-list {
   display: none;
 }
+/* Homepage layout correction. Override the original 40/60 grid directly.
+   Photo and introduction share their existing grid row.
+   Only the introduction moves closer; the photo remains at the left edge. */
+@media (min-width: 550px) {
+  .row.m-top-l {
+    grid-template-columns: 32% 68%;
+  }
+  .row.m-top-l > .col-3 {
+    padding-right: 15px;
+  }
+  .row.m-top-l > .col-3 .profile-photo {
+    width: 100%;
+    margin-top: 7px; /* aligns the visible picture with the first line's letters */
+    text-align: left;
+  }
+  .row.m-top-l > .col-3 .profile-photo .img {
+    transform: none;
+    background-position: 0% 30%;
+  }
+  .row.m-top-l > .col-9 {
+    padding-left: 8px; /* reduces the original 30px gutter to 23px */
+    padding-right: 15px;
+    margin-left: 0;
+  }
+  .row.m-top-l > .col-9 > p:first-child {
+    margin-top: 0;
+  }
+}
