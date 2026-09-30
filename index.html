@@ -61,16 +61,7 @@
 
 	<style>
 		/* Keep the photo column width unchanged, but make the photo itself smaller. */
-		.profile-photo {
-			margin-top: 10px;
-		}
-
-		.profile-photo .img {
-			transform: scale(0.80);
-			transform-origin: top center;
-		}
-
-		/* Compact expandable abstracts. */
+/* Compact expandable abstracts. */
 		.paper-details {
 			margin-top: 0.3rem;
 			margin-bottom: 0.35rem;
@@ -96,14 +87,39 @@
 			margin-bottom: 0.15rem;
 			padding-left: 0.9rem;
 			border-left: 1px solid #d8d8d8;
-			font-size: 0.94em;
-			line-height: 1.45;
+			font-size: 0.88em;
+			line-height: 1.42;
 		}
 
 		.paper-abstract p {
 			margin: 0;
 		}
-	</style>
+	
+		@media (min-width: 701px) {
+			.profile-photo {
+				margin-top: 2px;
+				text-align: left;
+			}
+
+			.profile-photo .img {
+				transform: scale(0.80);
+				transform-origin: top left;
+			}
+
+			.col-3 {
+				width: 22%;
+			}
+
+			.col-9 {
+				width: 78%;
+			}
+
+			.col-9 > p:first-child {
+				margin-top: 0;
+			}
+		}
+
+</style>
 </head>
 <body>
 <div class="container">
@@ -139,7 +155,7 @@
 			<h2 class="m-top-m">Research</h2>
 			<ul class="dash">
 				<li>
-					<a href="papers/where-campaigns-matter.pdf" target="_blank">Where Campaigns Matter: Evidence from Labour&rsquo;s 2024 General Election Campaign</a> <strong>(Job Market Paper)</strong>
+					<a class="paper-title" href="papers/where-campaigns-matter.pdf" target="_blank">Where Campaigns Matter: Evidence from Labour&rsquo;s 2024 General Election Campaign</a> <strong>(Job Market Paper)</strong>
 					<details class="paper-details">
 						<summary>Abstract</summary>
 						<div class="paper-abstract" data-abstract-file="abstracts/where-campaigns-matter.txt">
@@ -149,7 +165,7 @@
 				</li>
 
 				<li>
-					<a href="papers/within-bloc-competition.pdf" target="_blank">The Electoral Costs of Within-Bloc Competition: A Nationwide Canvassing Experiment</a> with Velibor Ma&#269;ki&#263;.
+					<a class="paper-title" href="papers/within-bloc-competition.pdf" target="_blank">The Electoral Costs of Within-Bloc Competition: A Nationwide Canvassing Experiment</a> with Velibor Ma&#269;ki&#263;.
 					<details class="paper-details">
 						<summary>Abstract</summary>
 						<div class="paper-abstract" data-abstract-file="abstracts/within-bloc-competition.txt">
@@ -159,7 +175,7 @@
 				</li>
 
 				<li>
-					<span>Selective Omission of Stories and Sources of Bias in Cable News</span>
+					<span class="paper-title">Selective Omission of Stories and Sources of Bias in Cable News</span>
 					<details class="paper-details">
 						<summary>Abstract</summary>
 						<div class="paper-abstract" data-abstract-file="abstracts/cable-news-bias.txt">
@@ -202,6 +218,20 @@ document.querySelectorAll("[data-abstract-file]").forEach(function (container) {
 			container.innerHTML = "<p>Abstract unavailable.</p>";
 		});
 });
+
+function sizeAbstractsToTitles() {
+	document.querySelectorAll(".paper-details").forEach(function (details) {
+		var item = details.closest("li");
+		var title = item ? item.querySelector(".paper-title") : null;
+		var abstract = details.querySelector(".paper-abstract");
+		if (!title || !abstract) return;
+
+		abstract.style.maxWidth = Math.ceil(title.getBoundingClientRect().width) + "px";
+	});
+}
+
+window.addEventListener("load", sizeAbstractsToTitles);
+window.addEventListener("resize", sizeAbstractsToTitles);
 </script>
 </body>
 </html>
