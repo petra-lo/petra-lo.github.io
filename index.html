@@ -61,19 +61,8 @@
 
 	<style>
 		/* Keep the photo column width unchanged, but make the photo itself smaller. */
-		.bio-row {
-			display: flex;
-			align-items: flex-start;
-		}
-
-		.bio-row .col-3,
-		.bio-row .col-9 {
-			float: none;
-		}
-
-		.profile-photo,
-		.profile-photo .img {
-			margin-top: 0;
+		.profile-photo {
+			margin-top: 10px;
 		}
 
 		.profile-photo .img {
@@ -81,16 +70,7 @@
 			transform-origin: top center;
 		}
 
-		.bio-row .col-9 > p:first-child {
-			margin-top: 0;
-		}
-
-		@media (max-width: 700px) {
-			.bio-row {
-				display: block;
-			}
-		}
-/* Compact expandable abstracts. */
+		/* Compact expandable abstracts. */
 		.paper-details {
 			margin-top: 0.3rem;
 			margin-bottom: 0.35rem;
@@ -137,12 +117,11 @@
 			</div>
 		</div>
 
-		<div class="bio-row">
-			<div class="col-3 center">
-				<div class="image profile-photo"><div class="img"></div></div>
-			</div>
+		<div class="col-3 center">
+			<div class="image profile-photo"><div class="img"></div></div>
+		</div>
 
-			<div class="col-9">
+		<div class="col-9">
 			<p>
 				I am a Ph.D. candidate in Economics at UC Berkeley. My research is in political economy, with a particular interest in electoral campaigns and the media.
 			</p>
@@ -203,7 +182,6 @@
 				<li>Researcher, Croatian National Bank, 2020&ndash;2021</li>
 				<li>Research Assistant to Professors Alberto Alesina and Stefanie Stantcheva, 2019&ndash;2020</li>
 			</ul>
-			</div>
 		</div>
 	</div>
 </div>
