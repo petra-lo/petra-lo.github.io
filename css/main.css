@@ -906,14 +906,14 @@ ul.dash li::marker { content: "—  "; }
    Only the introduction moves closer; the photo remains at the left edge. */
 @media (min-width: 550px) {
   .row.m-top-l {
-    grid-template-columns: 32% 68%;
+    grid-template-columns: 32.8% 67.2%;
   }
   .row.m-top-l > .col-3 {
     padding-right: 15px;
   }
   .row.m-top-l > .col-3 .profile-photo {
-    width: 100%;
-    margin-top: 7px; /* aligns the visible picture with the first line's letters */
+    width: 97.6%; /* keeps the portrait itself essentially the same size */
+    margin-top: 5px; /* tiny upward adjustment */
     text-align: left;
   }
   .row.m-top-l > .col-3 .profile-photo .img {
@@ -921,7 +921,7 @@ ul.dash li::marker { content: "—  "; }
     background-position: 0% 30%;
   }
   .row.m-top-l > .col-9 {
-    padding-left: 8px; /* reduces the original 30px gutter to 23px */
+    padding-left: 10px; /* slightly more breathing room beside the portrait */
     padding-right: 15px;
     margin-left: 0;
   }
