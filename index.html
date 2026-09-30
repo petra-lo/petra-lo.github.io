@@ -198,19 +198,24 @@ document.querySelectorAll("[data-abstract-file]").forEach(function (container) {
 		});
 });
 
-function sizeAbstractsToTitles() {
-	document.querySelectorAll(".paper-details").forEach(function (details) {
-		var item = details.closest("li");
-		var title = item ? item.querySelector(".paper-title") : null;
-		var abstract = details.querySelector(".paper-abstract");
-		if (!title || !abstract) return;
+function sizeAbstractsUniformly() {
+	var titles = Array.from(document.querySelectorAll(".paper-title"));
+	var abstracts = Array.from(document.querySelectorAll(".paper-abstract"));
+	if (!titles.length || !abstracts.length) return;
 
-		abstract.style.maxWidth = Math.ceil(title.getBoundingClientRect().width) + "px";
+	var maxTitleWidth = Math.max.apply(null, titles.map(function (title) {
+		return title.getBoundingClientRect().width;
+	}));
+
+	abstracts.forEach(function (abstract) {
+		abstract.style.width = Math.ceil(maxTitleWidth) + "px";
+		abstract.style.maxWidth = "100%";
+		abstract.style.boxSizing = "border-box";
 	});
 }
 
-window.addEventListener("load", sizeAbstractsToTitles);
-window.addEventListener("resize", sizeAbstractsToTitles);
+window.addEventListener("load", sizeAbstractsUniformly);
+window.addEventListener("resize", sizeAbstractsUniformly);
 </script>
 </body>
 </html>
