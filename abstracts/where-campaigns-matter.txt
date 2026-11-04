@@ -1,1 +1,23 @@
-Political parties devote substantial resources to campaigning, yet we know little about the electoral effects of the campaigns they actually deploy. An identical campaign may also affect voters differently depending on their political preferences and the strategic choices they face in their constituency. I study the UK Labour Party’s 2024 general election campaign using internal data on constituency-level resource allocation. Labour’s allocation rule generates two discontinuities that allow me to estimate the causal effects of mobilizing its full set of campaign resources in both swing and stronghold seats. The campaign increased Labour’s victory margin by 7.3 percentage points in strongholds but had no comparable effect in swing seats. Individual-level data indicate that left-leaning voters consolidate behind Labour in both settings. The right-wing electoral bloc fragments in strongholds as voters shift toward the far right, but consolidates behind the Conservatives in swing seats. The electoral effect of campaigning is therefore endogenous to the competitiveness of a seat, reflecting not only support for the campaigning party but also how its opponents’ supporters respond.
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs22 \cf0 Models of campaign allocation predict that parties concentrate resources in close\
+races. The gains from this strategy depend in part on how campaign effects vary with\
+the competitiveness of a constituency. I examine this question using internal data on\
+the UK Labour Party\'92s 2024 general election campaign. Its campaign prioritization rule\
+generated two discontinuities in the allocation of additional canvassing, advertising, and\
+visits by high-profile politicians, allowing me to estimate campaign effects separately in\
+swing and stronghold seats. The campaign increased Labour\'92s victory margin by 7.3\
+percentage points in strongholds but had no comparable effect in swing seats. Individuallevel\
+panel data show that the campaign drew previous supporters of other left-wing\
+parties toward Labour in both swing and stronghold seats. Previous supporters of the\
+Conservatives shifted toward the far right in strongholds but consolidated behind the\
+Conservatives in swing seats, offsetting Labour\'92s gains. Their self-reported preferences\
+suggest sincere voting in strongholds but strategic voting in swing seats. Campaign\
+effects are therefore endogenous to a seat\'92s electoral competitiveness, potentially limiting\
+the gains from concentrating resources in close races.}
