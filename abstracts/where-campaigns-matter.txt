@@ -5,7 +5,7 @@ the UK Labour Party's 2024 general election campaign. Its campaign prioritizatio
 generated two discontinuities in the allocation of additional canvassing, advertising, and
 visits by high-profile politicians, allowing me to estimate campaign effects separately in
 swing and stronghold seats. The campaign increased Labour's victory margin by 7.3
-percentage points in strongholds but had no comparable effect in swing seats. Individuallevel
+percentage points in strongholds but had no comparable effect in swing seats. Individual level
 panel data show that the campaign drew previous supporters of other left-wing
 parties toward Labour in both swing and stronghold seats. Previous supporters of the
 Conservatives shifted toward the far right in strongholds but consolidated behind the
